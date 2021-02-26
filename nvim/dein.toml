@@ -1,0 +1,19 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+on_ft = ['python']
+merged=0
+reve="release"
+hock_add = '''
+   "coc-emmet"
+'''    
+
+[[plugins]]
+repo = 'sudar/vim-arduino-syntax'
+merged=0
+reve="release"
+
+
+

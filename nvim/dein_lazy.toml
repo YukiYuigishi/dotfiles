@@ -1,0 +1,6 @@
+[[plugins]]
+repo = 'preservim/nerdtree'
+hock_add = '''
+   "NERDtree
+   let NERDTreeShowHidden=1
+'''

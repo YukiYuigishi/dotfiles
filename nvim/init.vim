@@ -34,9 +34,9 @@ set backup
 set swapfile
 set undofile
 set updatetime=30000
-set backupdir=$HOME/.vim-backup/backup
-set undodir=$HOME/.vim-backup/undo
-set directory=$HOME/.vim-backup/temp
+set backupdir=$HOME/.vim/backup
+set undodir=$HOME/.vim/undo
+set directory=$HOME/.vim/temp
 " タブ文字の表示幅
 set tabstop=3
 " Vimが挿入するインデントの幅
@@ -205,6 +205,4 @@ inoremap <Down> <NOP>
 inoremap <Left> <NOP>
 inoremap <Right> <NOP>
 
-"Vimscript study
-let g:session_path = '$HOME/.vim/session'
 

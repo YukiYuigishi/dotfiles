@@ -205,4 +205,4 @@ inoremap <Down> <NOP>
 inoremap <Left> <NOP>
 inoremap <Right> <NOP>
 
-
+set laststatus=2

@@ -4,3 +4,11 @@ hock_add = '''
    "NERDtree
    let NERDTreeShowHidden=1
 '''
+[[plugins]]
+repo = 'simeji/winresizer'
+
+[[plugins]]
+repo = 'mattn/vim-molder'
+hock_add = '''
+   let g:molder_show_hidden = 1
+'''

@@ -4,11 +4,26 @@ hock_add = '''
    "NERDtree
    let NERDTreeShowHidden=1
 '''
-[[plugins]]
-repo = 'simeji/winresizer'
 
 [[plugins]]
 repo = 'mattn/vim-molder'
 hock_add = '''
    let g:molder_show_hidden = 1
+'''
+
+[[plugins]]
+repo = 'ulwlu/elly.vim'
+hock_add = '''
+   set termguicolors
+'''
+
+[[plugins]]
+repo = 'sudar/vim-arduino-syntax'
+merged=0
+reve="release"
+
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+hock_add = '''
+   set hlg=ja,en
 '''

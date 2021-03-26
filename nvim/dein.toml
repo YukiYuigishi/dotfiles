@@ -11,14 +11,4 @@ hock_add = '''
 '''    
 
 [[plugins]]
-repo = 'sudar/vim-arduino-syntax'
-merged=0
-reve="release"
-
-[[plugins]]
-repo = 'ulwlu/elly.vim'
-hock_add = '''
-   set termguicolors
-'''
-
-
+repo = 'simeji/winresizer'

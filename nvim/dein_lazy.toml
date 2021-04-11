@@ -31,5 +31,6 @@ hock_add = '''
 [[plugins]]
 repo = 'YukiYuigishi/memo.vim'
 hock_add = '''
-   let g:memo_preview=0
+ let g:memo_saved_dir = '$HOME/memo'
+ let g:memo_preview=0
 '''

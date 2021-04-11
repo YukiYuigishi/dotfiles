@@ -27,3 +27,9 @@ repo = 'vim-jp/vimdoc-ja'
 hock_add = '''
    set hlg=ja,en
 '''
+
+[[plugins]]
+repo = 'YukiYuigishi/memo.vim'
+hock_add = '''
+   let g:memo_preview=0
+'''

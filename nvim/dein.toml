@@ -11,4 +11,15 @@ hock_add = '''
 '''    
 
 [[plugins]]
+repo = 'rust-lang/rust.vim'
+hock_add = '''
+   let g:rustfmt_autosave = 1 
+'''
+
+[[plugins]]
 repo = 'simeji/winresizer'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+
+

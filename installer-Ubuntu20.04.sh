@@ -7,11 +7,12 @@ do
 done << FILE
 $DATA 
 FILE
-
-apt update && apt upgrade -y && apt install -y git clangd  ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip
+cd $HOME
+apt update && apt upgrade -y && apt install -y git clangd  ninja-build gettext libtool curl libtool-bin autoconf automake cmake g++ pkg-config unzip
 
 curl -sL install-node.now.sh/lts | bash
-
+curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installdein.sh
+sh ./installdein.sh ~/.cache/dein
 mkdir ~/tmp
 mkdir -p ~/.cache/dein
 mkdir ~/.config

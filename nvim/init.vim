@@ -208,3 +208,9 @@ inoremap <Right> <NOP>
 set laststatus=2
 set mouse=a
 
+"追記
+aug HTMLANDXML
+   autocmd!
+   autocmd FileType xml inoremap <buffer> </ </<C-x><C-o>
+   autocmd FileType html inoremap <buffer> </ </<C-x><C-o>
+aug END

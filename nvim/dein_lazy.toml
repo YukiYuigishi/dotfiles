@@ -2,7 +2,7 @@
 repo = 'preservim/nerdtree'
 hock_add = '''
    "NERDtree
-   let NERDTreeShowHidden=1
+   let g:NERDTreeShowHidden=1
 '''
 
 [[plugins]]
@@ -14,16 +14,19 @@ hock_add = '''
 [[plugins]]
 repo = 'ulwlu/elly.vim'
 hock_add = '''
+   " Color Scheame
    set termguicolors
 '''
-
-[[plugins]]
-repo = 'sudar/vim-arduino-syntax'
-merged=0
-reve="release"
 
 [[plugins]]
 repo = 'vim-jp/vimdoc-ja'
 hock_add = '''
    set hlg=ja,en
+'''
+
+[[plugins]]
+repo = 'YukiYuigishi/memo.vim'
+hock_add = '''
+ let g:memo_saved_dir = '$HOME/memo'
+ let g:memo_preview=0
 '''

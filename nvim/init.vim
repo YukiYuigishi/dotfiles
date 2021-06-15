@@ -81,6 +81,10 @@ inoremap <Up> <NOP>
 inoremap <Down> <NOP>
 inoremap <Left> <NOP>
 inoremap <Right> <NOP>
+" インデント変更
+vnoremap < <gv
+vnoremap > >gv
+
 "仮の設定"
 "coc.nvim
 " if hidden is not set, TextEdit might fail.
@@ -220,3 +224,4 @@ aug HTMLANDXML
    autocmd FileType xml inoremap <buffer> </ </<C-x><C-o>
    autocmd FileType html inoremap <buffer> </ </<C-x><C-o>
 aug END
+

@@ -22,4 +22,7 @@ repo = 'simeji/winresizer'
 [[plugins]]
 repo = 'vim-airline/vim-airline'
 
+[[plugins]]
+repo = 'YukiYuigishi/privatememo.vim'
+
 

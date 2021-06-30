@@ -69,8 +69,8 @@ runtime init/dein.init.vim
 
 " key map系
 let mapleader = "\<Space>"
-nnoremap <Leader>w :w<CR>
-nnoremap <Leader>q :wq<CR><CR>
+nnoremap <silent><Leader>w :w<CR>
+nnoremap <silent><Leader>q :wq<CR><CR>
 
 "矢印禁止
 noremap <Up> <NOP>
@@ -219,6 +219,9 @@ set pumblend=10
 
 set laststatus=2
 set mouse=a
+
+let g:saved_memo_path='$HOME/memo'
+let g:memo_saved_dir='$HOME/memo'
 
 "追記
 aug HTMLANDXML

@@ -20,6 +20,11 @@ hock_add = '''
 repo = 'simeji/winresizer'
 
 [[plugins]]
+repo = 'rust-lang/rustfmt'
+hock_add = '''
+   let g:rustfmt_autosave = 1
+'''
+[[plugins]]
 repo = 'vim-airline/vim-airline'
 
 [[plugins]]

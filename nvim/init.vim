@@ -66,6 +66,25 @@ filetype plugin indent on
 "syntax enable
 
 runtime init/dein.init.vim
+
+" key map系
+let mapleader = "\<Space>"
+nnoremap <silent><Leader>w :w<CR>
+nnoremap <silent><Leader>q :wq<CR><CR>
+
+"矢印禁止
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+inoremap <Up> <NOP>
+inoremap <Down> <NOP>
+inoremap <Left> <NOP>
+inoremap <Right> <NOP>
+" インデント変更
+vnoremap < <gv
+vnoremap > >gv
+
 "仮の設定"
 "coc.nvim
 " if hidden is not set, TextEdit might fail.
@@ -195,17 +214,17 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 "明度設定
 set pumblend=10
 
-"矢印禁止
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
-inoremap <Up> <NOP>
-inoremap <Down> <NOP>
-inoremap <Left> <NOP>
-inoremap <Right> <NOP>
 
 set laststatus=2
 set mouse=a
+
 let g:saved_memo_path='$HOME/memo'
 let g:memo_saved_dir='$HOME/memo'
+
+"追記
+aug HTMLANDXML
+   autocmd!
+   autocmd FileType xml inoremap <buffer> </ </<C-x><C-o>
+   autocmd FileType html inoremap <buffer> </ </<C-x><C-o>
+aug END
+

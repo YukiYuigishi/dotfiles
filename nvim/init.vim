@@ -193,6 +193,8 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
+" Format 
+nmap <silent> <leader>g :Format<cr>
 " Using CocList
 " Show all diagnostics
 nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
@@ -225,3 +227,4 @@ aug HTMLANDXML
    autocmd FileType html inoremap <buffer> </ </<C-x><C-o>
 aug END
 
+set ttimeoutlen=10

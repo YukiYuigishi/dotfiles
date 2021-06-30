@@ -207,4 +207,5 @@ inoremap <Right> <NOP>
 
 set laststatus=2
 set mouse=a
-
+let g:saved_memo_path='$HOME/memo'
+let g:memo_saved_dir='$HOME/memo'

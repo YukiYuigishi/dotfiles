@@ -24,6 +24,14 @@ highlight String ctermfg=LightCyan
 highlight Number ctermfg=DarkCyan
 "検索した文字列をハイライトする
 set hls
+" ノーマルアイテム
+"hi Pmenu ctermbg=0
+" 選択しているアイテム
+"hi PmenuSel ctermbg=4
+" スクロールバー
+hi PmenuSbar ctermbg=2
+" スクロールのレバー
+hi PmenuThumb ctermfg=3
 "入力補助
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "ペア括弧を表示する
@@ -214,3 +222,5 @@ aug HTMLANDXML
    autocmd FileType xml inoremap <buffer> </ </<C-x><C-o>
    autocmd FileType html inoremap <buffer> </ </<C-x><C-o>
 aug END
+
+set ttimeoutlen=10

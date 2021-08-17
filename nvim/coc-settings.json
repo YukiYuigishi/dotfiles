@@ -1,3 +1,15 @@
 {
+<<<<<<< HEAD
   "clangd.path": "/home/yuki/.config/coc/extensions/coc-clangd-data/install/12.0.0/clangd_12.0.0/bin/clangd"
+=======
+  "clangd.path": "/home/$USER/.config/coc/extensions/coc-clangd-data/install/12.0.0/clangd_12.0.0/bin/clangd",
+   "eslint.autoFixOnSave": true,
+   "eslint.filetypes": [
+      "javascript",
+      "javascriptptreact",
+      "typescript",
+      "typescriptreact",
+      "vue"
+   ]
+>>>>>>> e6ef5a14ecd47ff77e2222d0e682e24cf1b2eb5d
 }

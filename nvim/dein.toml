@@ -17,13 +17,24 @@ hock_add = '''
 '''
 
 [[plugins]]
-repo = 'simeji/winresizer'
-
-[[plugins]]
 repo = 'rust-lang/rustfmt'
 hock_add = '''
    let g:rustfmt_autosave = 1
 '''
+
+
 [[plugins]]
-repo = 'vim-airline/vim-airline'
+repo = 'vimwiki/vimwiki'
+hock_add = '''
+
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
+
+'''
+
+[[plugins]]
+repo = 'jiangmaio/auto-pairs'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
 

@@ -38,3 +38,15 @@ repo = 'jiangmaio/auto-pairs'
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 
+[[plugins]]
+repo = 'preservim/nerdtree'
+hock_add = '''
+   "NERDtree
+   let g:NERDTreeShowHidden=1
+'''
+
+[[plugins]]
+repo = 'simeji/winresizer'
+
+[[plugins]]
+repo = 'wakatime/vim-wakatime'

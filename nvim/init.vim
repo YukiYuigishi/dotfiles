@@ -1,19 +1,19 @@
 "文字コードをutf-8
-set fenc=utf-8
+se fenc=utf-8
 
 "ヤンクをクリップボードに保存
-set clipboard+=unnamed
+se clipboard+=unnamed
 "mouse 使用
-""set mouse=a
+""se mouse=a
 "jj back
 inoremap <silent> jj <ESC>
 
 "行番号を表示
-set number
+se number
 "help 日本語化
-set helplang=ja
+se helplang=ja
 "音殺す
-set belloff=all
+se belloff=all
 "色系
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "コメントの色変更
@@ -23,7 +23,7 @@ highlight String ctermfg=LightCyan
 "数字の色を変える
 highlight Number ctermfg=DarkCyan
 "検索した文字列をハイライトする
-set hls
+se hls
 " ノーマルアイテム
 "hi Pmenu ctermbg=0
 " 選択しているアイテム
@@ -35,26 +35,26 @@ hi PmenuThumb ctermfg=3
 "入力補助
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "ペア括弧を表示する
-set showmatch
-set expandtab
+se showmatch
+se expandtab
 "backup swap 移動
-set backup
-set swapfile
-set undofile
-set updatetime=30000
-set backupdir=$HOME/.vim/backup
-set undodir=$HOME/.vim/undo
-set directory=$HOME/.vim/temp
+se backup
+se swapfile
+se undofile
+se updatetime=30000
+se backupdir=$HOME/.vim/backup
+se undodir=$HOME/.vim/undo
+se directory=$HOME/.vim/temp
 " タブ文字の表示幅
-set tabstop=3
+se tabstop=3
 " Vimが挿入するインデントの幅
-set shiftwidth=3
+se shiftwidth=3
 " 行頭の余白内で Tab を打ち込むと、'shiftwidth' の数だけインデントする
-set smarttab
+se smarttab
 " 改行時に前の行のインデントを継続する
-set autoindent
+se autoindent
 " 改行時に入力された行の末尾に合わせて次の行のインデントを増減する
-set smartindent
+se smartindent
 "括弧補完
 inoremap { {}<LEFT>
 inoremap ( ()<LEFT>
@@ -62,14 +62,14 @@ inoremap [ []<LEFT>
 inoremap " ""<LEFT>
 inoremap ' ''<LEFT>
 " Turn off paste mode when leaving insert ノーマルモードになったらpaste modeを解除する
-autocmd InsertLeave * set nopaste
+autocmd InsertLeave * se nopaste
 "ファイル名を表示
-set title
+se title
 "F2でvimrc
 nnoremap <silent> <F2> :tabnew $MYVIMRC<CR>
 
 " File type detection is On.
-set splitright
+se splitright
 filetype plugin indent on
 "syntax enable
 
@@ -95,18 +95,18 @@ vnoremap > >gv
 
 "仮の設定"
 "coc.nvim
-" if hidden is not set, TextEdit might fail.
-set hidden
+" if hidden is not se, TextEdit might fail.
+se hidden
 
 " Better display for messages
-set cmdheight=2
+se cmdheight=2
 
 " You will have bad experience for diagnostic messages when it's default 4000.
-set updatetime=300
+se updatetime=300
 " don't give |ins-completion-menu| messages.
-set shortmess+=c
+se shortmess+=c
 " always show signcolumns
-set signcolumn=yes
+se signcolumn=yes
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
@@ -199,7 +199,7 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+se stl^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Format 
 nmap <silent> <leader>g :Format<cr>
@@ -222,11 +222,11 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 "明度設定
-set pumblend=10
+se pumblend=10
 
 
-set laststatus=2
-set mouse=a
+se laststatus=2
+se mouse=a
 
 let g:saved_memo_path='$HOME/memo'
 let g:memo_saved_dir='$HOME/memo'
@@ -238,4 +238,24 @@ aug HTMLANDXML
    autocmd FileType html inoremap <buffer> </ </<C-x><C-o>
 aug END
 
-set ttimeoutlen=10
+se ttimeoutlen=10
+
+" ファイル名表示
+se stl=%F
+" 変更チェック表示
+se stl+=%m
+" 読み込み専用かどうか表示
+se stl+=%r
+" ヘルプページなら[HELP]と表示
+se stl+=%h
+" プレビューウインドウなら[Prevew]と表示
+se stl+=%w
+" これ以降は右寄せ表示
+se stl+=%=
+" file encoding
+se stl+=[ENC=%{&fileencoding}]
+" 現在行数/全行数
+se stl+=[LOW=%l/%L]
+" ステータスラインを常に表示(0:表示しない、1:2つ以上ウィンドウがある時だけ表示)
+se laststatus=2
+

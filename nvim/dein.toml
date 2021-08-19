@@ -16,18 +16,19 @@ hock_add = '''
    let g:rustfmt_autosave = 1 
 '''
 
-[[plugins]]
-repo = 'simeji/winresizer'
 
 [[plugins]]
 repo = 'rust-lang/rustfmt'
 hock_add = '''
    let g:rustfmt_autosave = 1
 '''
+
+
 [[plugins]]
-repo = 'vim-airline/vim-airline'
+repo = 'editorconfig/editorconfig-vim'
 
 [[plugins]]
-repo = 'YukiYuigishi/privatememo.vim'
-
-
+repo = 'preservim/nerdtree'
+hock_add = '''
+   let g:NERDTreeShowHidden=1
+'''

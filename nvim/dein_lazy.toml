@@ -1,11 +1,4 @@
 [[plugins]]
-repo = 'preservim/nerdtree'
-hock_add = '''
-   "NERDtree
-   let g:NERDTreeShowHidden=1
-'''
-
-[[plugins]]
 repo = 'mattn/vim-molder'
 hock_add = '''
    let g:molder_show_hidden = 1
@@ -45,3 +38,6 @@ repo = 'tpope/vim-fugitive'
 
 [[plugins]]
 repo = 'jiangmaio/auto-pairs'
+
+[[plugins]]
+repo = 'simeji/winresizer'

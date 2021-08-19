@@ -1,6 +1,5 @@
 "文字コードをutf-8
 set fenc=utf-8
-
 "ヤンクをクリップボードに保存
 set clipboard+=unnamed
 "mouse 使用
@@ -229,5 +228,5 @@ aug HTMLANDXML
    autocmd FileType xml inoremap <buffer> </ </<C-x><C-o>
    autocmd FileType html inoremap <buffer> </ </<C-x><C-o>
 aug END
-
+" tmux のESC delay 対策
 set ttimeoutlen=10

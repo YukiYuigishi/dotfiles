@@ -1,5 +1,5 @@
 {
-  "clangd.path": "/home/$USER/.config/coc/extensions/coc-clangd-data/install/12.0.0/clangd_12.0.0/bin/clangd",
+  "clangd.path": "/home/yuki-alter/.config/coc/extensions/coc-clangd-data/install/12.0.0/clangd_12.0.0/bin/clangd",
    "eslint.autoFixOnSave": true,
    "eslint.filetypes": [
       "javascript",

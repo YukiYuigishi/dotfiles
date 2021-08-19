@@ -18,26 +18,6 @@ hock_add = '''
 '''
 
 [[plugins]]
-repo = 'YukiYuigishi/memo.vim'
-hock_add = '''
- let g:memo_saved_dir = '$HOME/memo'
- let g:memo_preview=0
-'''
-
-[[plugins]]
-repo = 'vimwiki/vimwiki'
-hock_add = '''
-
-let g:vimwiki_list = [{'path': '~/vimwiki/',
-                      \ 'syntax': 'markdown', 'ext': '.md'}]
-
-'''
-
-[[plugins]]
 repo = 'tpope/vim-fugitive'
 
-[[plugins]]
-repo = 'jiangmaio/auto-pairs'
 
-[[plugins]]
-repo = 'simeji/winresizer'

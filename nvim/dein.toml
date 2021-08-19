@@ -16,19 +16,37 @@ hock_add = '''
    let g:rustfmt_autosave = 1 
 '''
 
-
 [[plugins]]
 repo = 'rust-lang/rustfmt'
 hock_add = '''
    let g:rustfmt_autosave = 1
 '''
 
-
 [[plugins]]
 repo = 'editorconfig/editorconfig-vim'
 
 [[plugins]]
+repo = 'vimwiki/vimwiki'
+hock_add = '''
+
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
+
+'''
+
+[[plugins]]
+repo = 'jiangmaio/auto-pairs'
+
+
+[[plugins]]
 repo = 'preservim/nerdtree'
 hock_add = '''
+   "NERDtree
    let g:NERDTreeShowHidden=1
 '''
+
+[[plugins]]
+repo = 'simeji/winresizer'
+
+[[plugins]]
+repo = 'wakatime/vim-wakatime'

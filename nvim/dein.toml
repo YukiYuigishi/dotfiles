@@ -22,6 +22,8 @@ hock_add = '''
    let g:rustfmt_autosave = 1
 '''
 
+[[plugins]]
+repo = 'editorconfig/editorconfig-vim'
 
 [[plugins]]
 repo = 'vimwiki/vimwiki'
@@ -35,8 +37,6 @@ let g:vimwiki_list = [{'path': '~/vimwiki/',
 [[plugins]]
 repo = 'jiangmaio/auto-pairs'
 
-[[plugins]]
-repo = 'tpope/vim-fugitive'
 
 [[plugins]]
 repo = 'preservim/nerdtree'

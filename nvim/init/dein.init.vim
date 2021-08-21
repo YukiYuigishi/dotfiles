@@ -1,7 +1,5 @@
-"dein.vim
-if &compatible
-  set nocompatible
-endif
+"<----------dein.vim-------------------------------->
+
 set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 if dein#load_state('~/.cache/dein')
    call dein#begin('~/.cache/dein')
@@ -10,7 +8,14 @@ if dein#load_state('~/.cache/dein')
    call dein#end()
    call dein#save_state()
 endif
+"<---          installation check                --->
 if dein#check_install()
    call dein#install()
 endif
 
+"<---          remove check                      --->
+let s:removed_plugins = dein#check_clean()
+if len(s:removed_plugins) > 0
+  call map(s:removed_plugins, "delete(v:val, 'rf')")
+  call dein#recache_runtimepath()
+endif

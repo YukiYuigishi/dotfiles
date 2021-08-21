@@ -1,6 +1,5 @@
 "文字コードをutf-8
 se fenc=utf-8
-
 "ヤンクをクリップボードに保存
 se clipboard+=unnamed
 "mouse 使用
@@ -237,7 +236,7 @@ aug HTMLANDXML
    autocmd FileType xml inoremap <buffer> </ </<C-x><C-o>
    autocmd FileType html inoremap <buffer> </ </<C-x><C-o>
 aug END
-
+" tmux のESC delay 対策
 se ttimeoutlen=10
 
 " ファイル名表示
@@ -258,4 +257,3 @@ se stl+=[ENC=%{&fileencoding}]
 se stl+=[LOW=%l/%L]
 " ステータスラインを常に表示(0:表示しない、1:2つ以上ウィンドウがある時だけ表示)
 se laststatus=2
-

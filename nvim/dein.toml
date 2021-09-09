@@ -50,3 +50,6 @@ repo = 'simeji/winresizer'
 
 [[plugins]]
 repo = 'wakatime/vim-wakatime'
+
+[[plugins]]
+repo = 'maxmellon/vim-jsx-pretty'

@@ -257,3 +257,7 @@ se stl+=[ENC=%{&fileencoding}]
 se stl+=[LOW=%l/%L]
 " ステータスラインを常に表示(0:表示しない、1:2つ以上ウィンドウがある時だけ表示)
 se laststatus=2
+
+" tsx
+au BufNewFile,BufRead *.tsx let b:tsx_ext_found = 1
+au BufNewFile,BufRead *.tsx set filetype=typescript.tsx

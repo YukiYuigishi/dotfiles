@@ -9,11 +9,11 @@ if dein#load_state('~/.cache/dein')
    call dein#save_state()
 endif
 "<---          installation check                --->
-if dein#check_install()
-   call dein#install()
-endif
+"if dein#check_install()
+"   call dein#install()
+"endif
 
-"<---          remove check                      --->
+"""<---          remove check                      --->
 let s:removed_plugins = dein#check_clean()
 if len(s:removed_plugins) > 0
   call map(s:removed_plugins, "delete(v:val, 'rf')")

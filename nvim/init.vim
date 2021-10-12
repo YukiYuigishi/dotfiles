@@ -1,7 +1,7 @@
 "文字コードをutf-8
 se fenc=utf-8
 "ヤンクをクリップボードに保存
-se clipboard+=unnamed
+"se clipboard+=unnamed
 "mouse 使用
 ""se mouse=a
 "jj back
@@ -31,6 +31,9 @@ se hls
 hi PmenuSbar ctermbg=2
 " スクロールのレバー
 hi PmenuThumb ctermfg=3
+
+" floating window
+hi NormalFloat guifg=#2e3440 guibg=#a3be8c
 "入力補助
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "ペア括弧を表示する

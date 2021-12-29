@@ -277,3 +277,14 @@ au BufNewFile,BufRead *.tsx let b:tsx_ext_found = 1
 au BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 au FileType json syntax match Comment +\/\/.\+$+
 
+
+set list listchars=tab:>-,trail:_
+scriptencoding utf-8
+
+augroup highlightIdegraphicSpace
+   autocmd!
+   autocmd ColorScheme * highlight IdeographicSpace term=underline ctermbg=DarkGreen
+   autocmd VimEnter,WinEnter * match IdeographicSpace /　/
+augroup END
+
+colorscheme pablo

@@ -56,3 +56,6 @@ repo = 'maxmellon/vim-jsx-pretty'
 
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+repo = 'vim-denops/denops.vim'

@@ -20,4 +20,6 @@ hock_add = '''
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 
+[[plugins]]
+repo = 'vim-denops/denops-helloworld.vim'
 

@@ -1,9 +1,11 @@
 export PATH="$PATH:/usr/local/bin/nvim/bin"
+export PATH=$PATH:~/.platformio/penv/bin
 export TERMINAL=alacritty
 export XDG_CONFIG_HOME="${HOME}/.config"
 export HISTFILE=${HOME}/.zsh_history
 export HISTSIZE=1000
 export SAVEHIST=10000
+
 
 # This loads nvm
 export NVM_DIR="$HOME/.config/nvm"

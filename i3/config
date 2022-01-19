@@ -198,8 +198,9 @@ bindsym $mod+Next workspace next
 # Screen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
+bindsym $mod+Shift+T exec "feh --bg-fill --randomize ~/Picture/wallpaper/*.{jpg,jpeg,png}"
 
 # 常駐アプリの起動
 exec fcitx
 # 壁紙
-exec --no-startup-id "feh --bg-fill --randomize ~/Picture/wallpaper/*.{jpeg,png}"
+exec --no-startup-id "feh --bg-fill --randomize ~/Picture/wallpaper/*.{jpg,jpeg,png}"

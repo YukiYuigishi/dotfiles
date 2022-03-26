@@ -1,12 +1,3 @@
 {
-  
-   "eslint.autoFixOnSave": true,
-   "eslint.filetypes": [
-      "javascript",
-      "javascriptptreact",
-      "typescript",
-      "typescriptreact",
-      "vue"
-
-  ]
+  "eslint.autoFixOnSave": true
 }

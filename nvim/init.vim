@@ -31,6 +31,9 @@ se hls
 hi PmenuSbar ctermbg=2
 " スクロールのレバー
 hi PmenuThumb ctermfg=3
+
+" floating window
+hi NormalFloat guifg=#2e3440 guibg=#a3be8c
 "入力補助
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "ペア括弧を表示する
@@ -92,6 +95,17 @@ inoremap <Right> <NOP>
 vnoremap < <gv
 vnoremap > >gv
 
+" 不可視文字関連
+" 全角スペース
+scriptencoding utf-8
+aug highlightIdegraphSpace
+   au!
+   au ColorScheme * highlight  IdeographhicSpace term=underline ctermbg=DarkRed
+   au VimEnter,WinEnter * match IdeographhicSpace /　/
+aug end
+colorscheme default
+" 半角スペース 
+se list listchars=tab:>-,trail:_
 "仮の設定"
 "coc.nvim
 " if hidden is not se, TextEdit might fail.
@@ -261,3 +275,16 @@ se laststatus=2
 " tsx
 au BufNewFile,BufRead *.tsx let b:tsx_ext_found = 1
 au BufNewFile,BufRead *.tsx set filetype=typescript.tsx
+au FileType json syntax match Comment +\/\/.\+$+
+
+
+set list listchars=tab:>-,trail:_
+scriptencoding utf-8
+
+augroup highlightIdegraphicSpace
+   autocmd!
+   autocmd ColorScheme * highlight IdeographicSpace term=underline ctermbg=DarkGreen
+   autocmd VimEnter,WinEnter * match IdeographicSpace /　/
+augroup END
+
+colorscheme pablo

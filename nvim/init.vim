@@ -1,7 +1,7 @@
 "文字コードをutf-8
 se fenc=utf-8
 "ヤンクをクリップボードに保存
-se clipboard+=unnamed
+se clipboard=unnamedplus
 "mouse 使用
 ""se mouse=a
 "jj back

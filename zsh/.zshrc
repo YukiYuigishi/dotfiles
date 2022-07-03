@@ -12,6 +12,9 @@ alias "nomal-cat"="/usr/bin/cat"
 alias clr="clear"
 alias chwall="feh --bg-fill --randomize ~/Picture/wallpaper/*.{jpeg,png}"
 alias gs="git status -bs"
+alias i3-doc="chrome ~/.cache/i3-wm-doc/i3_\ i3\ User’s\ Guide.html &"
+alias n="nvim"
+
 
 # history
 export HISTFILE=${HOME}/.zsh_history
@@ -22,4 +25,8 @@ setopt EXTENDED_HISTORY
 
 # function
 function history-all { history -E 1 }
+
+# prompt
+PROMPT='%m:%F{green}%~%f %n$ '
+
 

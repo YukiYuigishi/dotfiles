@@ -6,7 +6,6 @@
 #
 
 # i3 config file (v4)
-#
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
@@ -160,10 +159,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -198,9 +197,10 @@ bindsym $mod+Next workspace next
 # Screen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
-bindsym $mod+Shift+T exec "feh --bg-fill --randomize ~/Picture/wallpaper/*.{jpg,jpeg,png}"
+bindsym $mod+Shift+T exec "feh --bg-fill --randomize ~/Pictures/wallpaper/*.{jpg,jpeg,png}"
 
 # 常駐アプリの起動
 exec fcitx
 # 壁紙
-exec --no-startup-id "feh --bg-fill --randomize ~/Picture/wallpaper/*.{jpg,jpeg,png}"
+exec --no-startup-id "feh --bg-fill --randomize ~/Pictures/wallpaper/*.{jpg,jpeg,png}"
+exec flameshot

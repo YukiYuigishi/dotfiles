@@ -1,7 +1,7 @@
 [user]
 	email = me@yuigishi.dev
 	name = Yuki Yuigishi
-	signingkey = 70FC50E5A875310E
+	signingkey = 201895CE23A83FB7
 
 
 
@@ -12,3 +12,5 @@
 	editor = nvim
 [init]
 	defaultBranch = master
+[commit]
+	gpgsign = true

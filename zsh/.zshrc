@@ -1,9 +1,9 @@
 
 # alias
-alias ls="exa"
-alias la="exa -a"
-alias ll="exa -la"
-alias tree="exa --tree"
+alias ls="exa --icons --color=always"
+alias la="exa -a --icons --color=always"
+alias ll="exa -la --icons --color=always"
+alias tree="exa --tree --icons --color=always"
 alias cat="bat"
 alias "nomal-cat"="/usr/bin/cat"
 alias clr="clear"

@@ -1,4 +1,5 @@
 export PATH="$PATH:/usr/local/bin/nvim/bin"
+export PATH="$PATH:~/.local/bin/arduino/arduino-ide_2.0.0_Linux_64bit"
 export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:$HOME/go/bin"
 export PATH=$PATH:~/.platformio/penv/bin

@@ -1,7 +1,0 @@
-{
-  "eslint.autoFixOnSave": true
-  ,"jedi": {
-     "enable": true,
-     "startupMessage": false
-  }
-}

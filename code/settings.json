@@ -32,4 +32,5 @@
     "editor.lineNumbers": "on",
     "zenMode.hideStatusBar": false,
     "zenMode.hideLineNumbers": false,
+    "git.enableCommitSigning": true,
 }

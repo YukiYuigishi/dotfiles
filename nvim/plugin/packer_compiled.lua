@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/yuki-arch/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/yuki-arch/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/yuki-arch/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/yuki-arch/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/yuki-arch/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
+local package_path_str = "/home/yuki/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/yuki/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/yuki/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/yuki/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/yuki/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -76,83 +76,123 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["cmp-buffer"] = {
     loaded = true,
-    path = "/home/yuki-arch/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    path = "/home/yuki/.local/share/nvim/site/pack/packer/start/cmp-buffer",
     url = "https://github.com/hrsh7th/cmp-buffer"
   },
   ["cmp-cmdline"] = {
     loaded = true,
-    path = "/home/yuki-arch/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
+    path = "/home/yuki/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
     url = "https://github.com/hrsh7th/cmp-cmdline"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
-    path = "/home/yuki-arch/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    path = "/home/yuki/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
   ["cmp-path"] = {
     loaded = true,
-    path = "/home/yuki-arch/.local/share/nvim/site/pack/packer/start/cmp-path",
+    path = "/home/yuki/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
+  },
+  ["dressing.nvim"] = {
+    loaded = true,
+    path = "/home/yuki/.local/share/nvim/site/pack/packer/start/dressing.nvim",
+    url = "https://github.com/stevearc/dressing.nvim"
+  },
+  ["fidget.nvim"] = {
+    loaded = true,
+    path = "/home/yuki/.local/share/nvim/site/pack/packer/start/fidget.nvim",
+    url = "https://github.com/j-hui/fidget.nvim"
   },
   ["lir.nvim"] = {
     loaded = true,
-    path = "/home/yuki-arch/.local/share/nvim/site/pack/packer/start/lir.nvim",
+    path = "/home/yuki/.local/share/nvim/site/pack/packer/start/lir.nvim",
     url = "https://github.com/tamago324/lir.nvim"
+  },
+  ["lsp_signature.nvim"] = {
+    loaded = true,
+    path = "/home/yuki/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
+    url = "https://github.com/ray-x/lsp_signature.nvim"
+  },
+  ["lspkind.nvim"] = {
+    loaded = true,
+    path = "/home/yuki/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
+    url = "https://github.com/onsails/lspkind.nvim"
   },
   ["lspsaga.nvim"] = {
     loaded = true,
-    path = "/home/yuki-arch/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
+    path = "/home/yuki/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
     url = "https://github.com/glepnir/lspsaga.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
-    path = "/home/yuki-arch/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    path = "/home/yuki/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
     url = "https://github.com/williamboman/mason-lspconfig.nvim"
+  },
+  ["mason-null-ls.nvim"] = {
+    loaded = true,
+    path = "/home/yuki/.local/share/nvim/site/pack/packer/start/mason-null-ls.nvim",
+    url = "https://github.com/jayp0521/mason-null-ls.nvim"
   },
   ["mason.nvim"] = {
     loaded = true,
-    path = "/home/yuki-arch/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    path = "/home/yuki/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["null-ls.nvim"] = {
+    loaded = true,
+    path = "/home/yuki/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
-    path = "/home/yuki-arch/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    path = "/home/yuki/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/home/yuki-arch/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    path = "/home/yuki/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/yuki/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
-    path = "/home/yuki-arch/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    path = "/home/yuki/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = false,
     needs_bufread = false,
-    path = "/home/yuki-arch/.local/share/nvim/site/pack/packer/opt/packer.nvim",
+    path = "/home/yuki/.local/share/nvim/site/pack/packer/opt/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/home/yuki-arch/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    path = "/home/yuki/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["telescope.nvim"] = {
+    loaded = true,
+    path = "/home/yuki/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-lua/telescope.nvim"
   },
   ["vim-colors-hatsunemiku"] = {
     loaded = true,
-    path = "/home/yuki-arch/.local/share/nvim/site/pack/packer/start/vim-colors-hatsunemiku",
+    path = "/home/yuki/.local/share/nvim/site/pack/packer/start/vim-colors-hatsunemiku",
     url = "https://github.com/4513ECHO/vim-colors-hatsunemiku"
   },
   ["vim-vsnip"] = {
     loaded = true,
-    path = "/home/yuki-arch/.local/share/nvim/site/pack/packer/start/vim-vsnip",
+    path = "/home/yuki/.local/share/nvim/site/pack/packer/start/vim-vsnip",
     url = "https://github.com/hrsh7th/vim-vsnip"
   },
   winresizer = {
     loaded = true,
-    path = "/home/yuki-arch/.local/share/nvim/site/pack/packer/start/winresizer",
+    path = "/home/yuki/.local/share/nvim/site/pack/packer/start/winresizer",
     url = "https://github.com/simeji/winresizer"
   }
 }

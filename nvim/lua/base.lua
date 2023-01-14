@@ -17,6 +17,7 @@ opt.wrapscan = true
 
 --- hilight branket
 
+opt.termguicolors = true
 opt.showmatch = true
 opt.matchtime = 1
 
@@ -27,7 +28,7 @@ opt.tabstop = 3
 opt.shiftwidth = 3
 opt.smarttab = true
 opt.autoindent = true
-
+vim.g.editorconfig_enable = true
 
 --- LSP handlers
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(

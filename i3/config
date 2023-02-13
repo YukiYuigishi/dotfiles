@@ -14,8 +14,7 @@ set $mod Mod4
 # is used in the bar {} block below.
 font pango:monospace 8
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
+# This font is widely installed, provides lots of unicode glyphs, right-to-left text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
 
 # Start XDG autostart .desktop files using dex. See also
@@ -96,8 +95,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # Print Screen
-bindsym Print exec flameshot gui --path ~/Pictures/screenshot
-
+bindsym Print exec flameshot gui 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
@@ -206,4 +204,7 @@ bindsym $mod+Shift+T exec "feh --bg-fill --randomize ~/Pictures/wallpaper/*.{jpg
 exec fcitx
 # 壁紙
 exec --no-startup-id "feh --bg-fill --randomize ~/Pictures/wallpaper/*.{jpg,jpeg,png}"
-exec flameshot
+exec flameshot --path ~/Pictures/screenshot
+
+# ウィンドウの設定
+exec /home/yuki/.screenlayout/home_dualmonitor.sh

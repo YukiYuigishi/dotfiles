@@ -1,0 +1,5 @@
+set number
+set relativenumber
+
+inoremap jj <ESC>
+nnoremap <leader>g :action ReformatCode<CR>

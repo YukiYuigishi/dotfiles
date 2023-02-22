@@ -2,3 +2,4 @@
 dein_lazy.toml.org
 time
 coc-settings.json
+plugin/packer_compiled.lua

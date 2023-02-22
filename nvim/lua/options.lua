@@ -10,6 +10,14 @@ require("mason").setup({
    }
 })
 
+require("mason-lspconfig").setup({
+   ensure_installed = {
+      "tsserver",
+      "eslint",
+   },
+   automatic_installation = true
+})
+
 require("mason-lspconfig").setup_handlers({ function(server)
   local opt = {
     -- -- Function executed when the LSP server startup
@@ -25,6 +33,15 @@ require("mason-lspconfig").setup_handlers({ function(server)
   require("lspconfig")[server].setup(opt)
 end })
 
+require("mason-null-ls").setup({
+   ensure_installed = {"prettier"},
+   automatic_installation = true,
+})
+local null_ls = require("null-ls")
+null_ls.setup({
+   sources = { null_ls.builtins.formatting.prettier },
+})
+
 
 local cmp = require("cmp")
 cmp.setup({ 
@@ -36,6 +53,7 @@ cmp.setup({
    mapping = cmp.mapping.preset.insert({
       ["<C-p>"] = cmp.mapping.select_prev_item(),
       ["<C-n>"] = cmp.mapping.select_next_item(),
+      ["<Tab>"] = cmp.mapping.select_next_item(),
       ["<C-l>"] = cmp.mapping.complete(),
       ["<C-e>"] = cmp.mapping.abort(),
       ["<CR>" ] = cmp.mapping.confirm { select = true},
@@ -43,7 +61,8 @@ cmp.setup({
    sources = {
       { name = "nvim_lsp"},
       { name = "buffer"},
-      { name = "path"}
+      { name = "path"},
+      { name = "buffer"}
    },
    experimental = {
       ghost_text = true,
@@ -60,28 +79,31 @@ cmp.setup.cmdline("/", {
 
 cmp.setup.cmdline(":", {
    mapping = cmp.mapping.preset.cmdline(),
-   sources = {
-      { name = "path" },
-      { name = "cmdlime" }
-   },
+   sources = cmp.config.sources({
+      { name = "path" }
+   },{
+      { name = "cmdline" }
+   })
 })
 
+require("lsp_signature").setup({
+})
 
 -- LSP UI
-require("lspsaga").setup({
- border_style = "single",
-  symbol_in_winbar = {
-    enable = true,
-  },
-  code_action_lightbulb = {
-    enable = true,
-  },
-  show_outline = {
-    win_width = 50,
-    auto_preview = false,
-  },
-})
-
+-- require("lspsaga").setup({
+--  border_style = "single",
+--   symbol_in_winbar = {
+--     enable = true,
+--   },
+--   code_action_lightbulb = {
+--     enable = true,
+--   },
+--   show_outline = {
+--     win_width = 50,
+--     auto_preview = false,
+--   },
+-- })
+-- 
 
 -- lir.nvim
 local actions = require("lir.actions")
@@ -95,7 +117,8 @@ require('lir').setup {
   show_hidden_files = false,
   ignore = {}, -- { ".DS_Store" "node_modules" } etc.
   devicons = {
-     enable = true,
+   enable = true,
+   highlight_dirname = true
   },
   mappings = {
     ["l"]     = actions.edit,
@@ -170,3 +193,21 @@ require'nvim-web-devicons'.set_icon({
   }
 })
 
+
+-- nvim-lsp progress pop up
+require("fidget").setup{}
+
+-- telescope.nvim
+require('telescope').setup({
+  defaults = {
+    mappings = {
+      n = {
+        ['<Esc>'] = require('telescope.actions').close,
+        ['<C-g>'] = require('telescope.actions').close,
+      },
+      i = {
+        ['<C-g>'] = require('telescope.actions').close,
+      },
+    },
+  },
+})

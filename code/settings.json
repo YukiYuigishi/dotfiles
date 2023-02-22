@@ -29,8 +29,9 @@
         },
     ],
     "zenMode.centerLayout": false,
-    "editor.lineNumbers": "on",
+    "editor.lineNumbers": "relative",
     "zenMode.hideStatusBar": false,
     "zenMode.hideLineNumbers": false,
     "git.enableCommitSigning": true,
+    "workbench.colorTheme": "Default High Contrast",
 }

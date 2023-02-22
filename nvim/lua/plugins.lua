@@ -17,7 +17,6 @@ vim.cmd("packadd packer.nvim") require("packer").startup(function(use)
    use "hrsh7th/cmp-cmdline"
 
    use "hrsh7th/vim-vsnip"
-	use "hrsh7th/vim-vsnip"
 
    -- LSP UI
    use({

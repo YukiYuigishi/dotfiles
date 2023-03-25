@@ -27,6 +27,9 @@ vim.cmd("packadd packer.nvim") require("packer").startup(function(use)
    use({
       "glepnir/lspsaga.nvim",
       branch = "main",
+      requires = {
+         {"nvim-tree/nvim-web-devicons"}
+      }
    })
 
    --- signature support
@@ -48,7 +51,7 @@ vim.cmd("packadd packer.nvim") require("packer").startup(function(use)
    -- filer
    use "tamago324/lir.nvim"
    use "nvim-lua/plenary.nvim"
-   use "kyazdani42/nvim-web-devicons"
+   use "nvim-tree/nvim-web-devicons"
 
    -- telescope
    use "nvim-lua/telescope.nvim"

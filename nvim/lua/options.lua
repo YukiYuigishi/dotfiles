@@ -1,110 +1,81 @@
 -- plugin options
 --  LSP Sever management
+
 require("mason").setup({
-   ui = {
-      icons = {
-			package_installed = "✓",
-			package_pending = "➜",
-			package_uninstalled = "✗"
-      }
+    ui = {
+        icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
+        }
+    }
+})
+require('mason-lspconfig').setup_handlers({function(server)
+   local opt = {
+      capabilities = require('cmp_nvim_lsp').default_capabilities(
+         vim.lsp.protocol.make_client_capabilities()
+      )
    }
-})
-
-require("mason-lspconfig").setup({
-   ensure_installed = {
-      "tsserver",
-      "eslint",
-   },
-   automatic_installation = true
-})
-
-require("mason-lspconfig").setup_handlers({ function(server)
-  local opt = {
-    -- -- Function executed when the LSP server startup
-    -- on_attach = function(client, bufnr)
-    --   local opts = { noremap=true, silent=true }
-    --   vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-    --   vim.cmd "autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)"
-    -- end,
-    capabilities = require("cmp_nvim_lsp").default_capabilities(
-      vim.lsp.protocol.make_client_capabilities()
-    )
-  }
-  require("lspconfig")[server].setup(opt)
+   require('lspconfig')[server].setup(opt)
 end })
 
-require("mason-null-ls").setup({
-   ensure_installed = {"prettier"},
-   automatic_installation = true,
-})
-local null_ls = require("null-ls")
-null_ls.setup({
-   sources = { null_ls.builtins.formatting.prettier },
-})
+-- LSP handlers
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics, { virtual_text = false }
+)
 
-
-local cmp = require("cmp")
-cmp.setup({ 
+--  snippet complete
+local cmp = require('cmp')
+cmp.setup({
    snippet = {
       expand = function(args)
          vim.fn["vsnip#anonymous"](args.body)
       end,
    },
    mapping = cmp.mapping.preset.insert({
-      ["<C-p>"] = cmp.mapping.select_prev_item(),
-      ["<C-n>"] = cmp.mapping.select_next_item(),
-      ["<Tab>"] = cmp.mapping.select_next_item(),
-      ["<C-l>"] = cmp.mapping.complete(),
-      ["<C-e>"] = cmp.mapping.abort(),
-      ["<CR>" ] = cmp.mapping.confirm { select = true},
+      ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+      ['<C-f>'] = cmp.mapping.scroll_docs(4),
+      ['<C-Space>'] = cmp.mapping.complete(),
+      ['<C-e>'] = cmp.mapping.abort(),
+      ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
    }),
-   sources = {
-      { name = "nvim_lsp"},
-      { name = "buffer"},
-      { name = "path"},
-      { name = "buffer"}
-   },
-   experimental = {
-      ghost_text = true,
-   },
-
-})
-
-cmp.setup.cmdline("/", {
-   mapping = cmp.mapping.preset.cmdline(),
-   sources = {
-      { name = "buffer" }
-   }
-})
-
-cmp.setup.cmdline(":", {
-   mapping = cmp.mapping.preset.cmdline(),
    sources = cmp.config.sources({
-      { name = "path" }
+      {name = 'nvim_lsp'},
+      {name = 'vsnip'},
    },{
-      { name = "cmdline" }
+      {name = 'buffer'}
+   })
+})
+-- Set configuration for specific filetype.
+cmp.setup.filetype('gitcommit', {
+   sources = cmp.config.sources({
+      { name = 'cmp_git' }, 
+   }, {
+      { name = 'buffer' },
    })
 })
 
-require("lsp_signature").setup({
+cmp.setup.cmdline({ '/', '?' }, {
+   mapping = cmp.mapping.preset.cmdline(),
+   sources = {
+      { name = 'buffer' }
+   }
 })
 
--- LSP UI
--- require("lspsaga").setup({
---  border_style = "single",
---   symbol_in_winbar = {
---     enable = true,
---   },
---   code_action_lightbulb = {
---     enable = true,
---   },
---   show_outline = {
---     win_width = 50,
---     auto_preview = false,
---   },
--- })
--- 
---require("lspsaga").setup({})
+cmp.setup.cmdline(':', {
+   mapping = cmp.mapping.preset.cmdline(),
+   sources = cmp.config.sources({
+      { name = 'path' }
+   }, {
+      { name = 'cmdline' }
+   })
+})
+
+-- local capabilities = require('cmp_nvim_lsp').default_capabilities()
+--  -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+--  require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
+--    capabilities = capabilities
+--  }
 
 -- lir.nvim
 local actions = require("lir.actions")
@@ -186,7 +157,7 @@ require('lir').setup {
 }
 
 -- custom folder icon
-require'nvim-web-devicons'.set_icon({
+require('nvim-web-devicons').set_icon({
   lir_folder_icon = {
     icon = "",
     color = "#7ebae4",
@@ -194,21 +165,40 @@ require'nvim-web-devicons'.set_icon({
   }
 })
 
+vim.cmd("\
+let g:memolist_path = '/home/yuki-arch/.config/memo/_posts'\
+")
 
--- nvim-lsp progress pop up
-require("fidget").setup{}
 
--- telescope.nvim
-require('telescope').setup({
-  defaults = {
-    mappings = {
-      n = {
-        ['<Esc>'] = require('telescope.actions').close,
-        ['<C-g>'] = require('telescope.actions').close,
-      },
-      i = {
-        ['<C-g>'] = require('telescope.actions').close,
-      },
-    },
+-- nvim-treesitter
+require('nvim-treesitter.configs').setup{
+   -- A list of parser names, or "all" (the five listed parsers should always be installed)
+  ensure_installed = { "c", "cpp","go", "typescript","rust","markdown","lua", "vim", "help", "query" },
+
+  sync_install = false,
+
+  auto_install = true,
+
+
+  highlight = {
+    enable = true,
+
+    -- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
+    -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
+    -- the name of the parser)
+    -- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
+    disable = function(lang, buf)
+        local max_filesize = 100 * 1024 -- 100 KB
+        local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+        if ok and stats and stats.size > max_filesize then
+            return true
+        end
+    end,
+
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    additional_vim_regex_highlighting = false,
   },
-})
+}

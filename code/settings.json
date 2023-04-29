@@ -34,4 +34,11 @@
     "zenMode.hideLineNumbers": false,
     "git.enableCommitSigning": true,
     "workbench.colorTheme": "Default High Contrast",
+    "go.inlayHints.compositeLiteralFields": true,
+    "go.inlayHints.compositeLiteralTypes": true,
+    "gopls": {
+
+        "ui.completion.usePlaceholders": true,
+
+    },
 }

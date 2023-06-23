@@ -24,7 +24,7 @@ keymap("n", "<F2>", "<cmd>tabnew<CR><cmd>edit ~/.config/nvim<CR>")
 
 -- keyboard shortcut
 
-keymap("n", "<leader>g",'<cmd>vim.lsp.buf.format()<CR>')
+keymap("n", "<leader>g",'<cmd>lua vim.lsp.buf.format()<CR>')
 keymap('n', 'K',  '<cmd>lua vim.lsp.buf.hover()<CR>')
 keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>')
 keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')

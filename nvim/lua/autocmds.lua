@@ -8,7 +8,7 @@ local api = vim.api
 --     require('lspsaga.diagnostic').show_cursor_diagnostics()
 --   end
 -- })
--- 
+--
 
 -- api.nvim_create_autocmd({ 'FileType' }, {
 --   pattern = { 'typescript', 'typescriptreact', 'typescript.tsx' },
@@ -19,7 +19,3 @@ local api = vim.api
 --     end)
 -- end,
 -- })
-
-
-
-

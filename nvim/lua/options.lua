@@ -173,7 +173,7 @@ let g:memolist_path = '/home/yuki-arch/.config/memo/_posts'\
 -- nvim-treesitter
 require('nvim-treesitter.configs').setup{
    -- A list of parser names, or "all" (the five listed parsers should always be installed)
-  ensure_installed = { "c", "cpp","go", "typescript","rust","markdown","lua", "vim", "help", "query" },
+  ensure_installed = { "c", "cpp","go", "typescript","rust","markdown","lua", "vim",  "query" },
 
   sync_install = false,
 

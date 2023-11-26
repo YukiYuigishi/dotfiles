@@ -3,7 +3,7 @@
 sudo apt-get update && sudo apt get upgrade -y
 
 # install packages
-sudo apt-get install vim gcc g++ clang tmux git ripgrep bat exa  -y
+sudo apt-get install vim gcc g++ clang tmux git ripgrep bat exa fish -y
 
 # install neovim build prerequisites
 sudo apt-get install ninja-build gettext cmake unzip curl git -y
@@ -37,6 +37,6 @@ ln -s $HOME/.dotfiles/zsh zsh
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 nvim -v
-nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync' 
-nvim --headless -c 'TSUpdate'
-
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync' -c 'TSUpdate' -c 'q'
+echo 
+echo "install finish'

@@ -1,8 +1,6 @@
 --- keybind settings
 local keymap = vim.keymap.set
 keymap("", "<Space>", "<Nop>", {noremap = true, silent = true})
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
 keymap({ 'n', 'x' }, '<Space>', '<Nop>')
 keymap({ 'n', 'x' }, '<Plug>(lsp)', '<Nop>')
 keymap({ 'n', 'x' }, 'm', '<Plug>(lsp)')

@@ -12,3 +12,4 @@ augroup lsp_document_highlight
   autocmd CursorMoved,CursorMovedI * lua vim.lsp.buf.clear_references()
 augroup END
 ]]
+

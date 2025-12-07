@@ -1,20 +1,23 @@
 --- keybind settings
 local keymap = vim.keymap.set
-keymap("", "<Space>", "<Nop>", {noremap = true, silent = true})
+keymap("", "<Space>", "<Nop>", { noremap = true, silent = true })
 keymap({ 'n', 'x' }, '<Space>', '<Nop>')
 keymap({ 'n', 'x' }, '<Plug>(lsp)', '<Nop>')
 keymap({ 'n', 'x' }, 'm', '<Plug>(lsp)')
 keymap({ 'n', 'x' }, '<Plug>(ff)', '<Nop>')
 keymap({ 'n', 'x' }, ';', '<Plug>(ff)')
 
---- jj <ESC>
+--- <ESC>
 keymap("i", "jj", "<ESC>")
+keymap('t', '<Esc><Esc>', [[<C-\><C-n>]])
 
 --- auto compliment (,{, [
 keymap("i", "(", "()<LEFT>")
 keymap("i", "{", "{}<LEFT>")
 keymap("i", "[", "[]<LEFT>")
 
+--- cancel search highlight
+keymap("n", "<Esc><Esc>", "<cmd>nohlsearch<CR>")
 
 -- open init.lua
 keymap("n", "<F2>", "<cmd>tabnew<CR><cmd>edit ~/.config/nvim<CR>")
@@ -22,8 +25,8 @@ keymap("n", "<F2>", "<cmd>tabnew<CR><cmd>edit ~/.config/nvim<CR>")
 
 -- keyboard shortcut
 
-keymap("n", "<leader>g",'<cmd>lua vim.lsp.buf.format()<CR>')
-keymap('n', 'K',  '<cmd>lua vim.lsp.buf.hover()<CR>')
+keymap('n', '<leader>g', '<cmd>lua vim.lsp.buf.format({focusable=false})<CR>')
+keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
 keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>')
 keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
 keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>')

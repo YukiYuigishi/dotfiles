@@ -24,8 +24,8 @@ opt.matchtime = 1
 --- tab
 
 opt.expandtab = true
-opt.tabstop = 3
-opt.shiftwidth = 3
+opt.tabstop = 4
+opt.shiftwidth = 4
 opt.smarttab = true
 opt.autoindent = true
 vim.g.editorconfig_enable = true

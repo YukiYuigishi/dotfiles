@@ -37,6 +37,7 @@ keymap('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<CR>')
 keymap('n', 'ge', '<cmd>lua vim.diagnostic.open_float()<CR>')
 keymap('n', 'g]', '<cmd>lua vim.diagnostic.goto_next()<CR>')
 keymap('n', 'g[', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
+keymap('n', '<Esc><Esc>', '<cmd>cclose<CR>', { buffer=true, silent=true })
 
 -- telescope
 local builtin = require('telescope.builtin')
@@ -44,3 +45,20 @@ keymap("n", "<leader>ff", builtin.find_files, {})
 keymap("n", "<leader>fg", builtin.live_grep, {})
 keymap("n", "<leader>fb", builtin.buffers, {})
 keymap("n", "<leader>fh", builtin.help_tags, {})
+
+local POSTS_DIR = vim.fn.expand("~/.config/memo/_posts")
+keymap("n", "<leader>fr", function()
+    local dir = POSTS_DIR
+    builtin.find_files({
+        prompt_title = "Find Files: _posts",
+        cwd = POSTS_DIR,
+        hidden = true,
+    })
+end, {})
+keymap("n", "<leader>fe", function()
+    local dir = POSTS_DIR
+    builtin.live_grep({
+        prompt_title = "Live Grep: posts",
+        search_dirs = { dir },
+    })
+end, {})

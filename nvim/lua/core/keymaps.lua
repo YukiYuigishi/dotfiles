@@ -11,11 +11,6 @@ keymap({ 'n', 'x' }, ';', '<Plug>(ff)')
 keymap("i", "jj", "<ESC>")
 keymap('t', '<Esc><Esc>', [[<C-\><C-n>]])
 
---- auto compliment (,{, [
-keymap("i", "(", "()<LEFT>")
-keymap("i", "{", "{}<LEFT>")
-keymap("i", "[", "[]<LEFT>")
-
 --- cancel search highlight
 keymap("n", "<Esc><Esc>", "<cmd>nohlsearch<CR>")
 

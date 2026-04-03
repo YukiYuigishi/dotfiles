@@ -3,10 +3,10 @@
 sudo apt-get update && sudo apt get upgrade -y
 
 # install packages
-sudo apt-get install vim gcc g++ clang tmux git ripgrep bat exa fish -y
+sudo apt-get install vim gcc g++ clang tmux git ripgrep bat eza fish -y
 
 # install neovim build prerequisites
-sudo apt-get install ninja-build gettext cmake unzip curl git -y
+sudo apt-get install ninja-build gettext cmake unzip curl git build-essential -y
 
 
 echo "download dotfiles"

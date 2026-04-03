@@ -31,9 +31,9 @@ opt.autoindent = true
 vim.g.editorconfig_enable = true
 
 --- LSP handlers
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-   vim.lsp.diagnostic.on_publish_diagnostics, { virtual_text = false}
-)
+vim.diagnostic.config({
+  virtual_text = false,
+})
 
 --- set leader key
 vim.g.mapleader = " "

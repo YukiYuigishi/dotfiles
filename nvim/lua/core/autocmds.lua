@@ -31,3 +31,10 @@ local api = vim.api
 --       })
 --    end,
 -- })
+
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = 'qf',
+    callback = function(event)
+        vim.keymap.set('n', '<ESC>', '<cmd>close<CR>', { buffer = event.buf, silent = true })
+    end
+})
